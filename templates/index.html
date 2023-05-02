@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Pathfinding Demo</title>
+  <style>
+    /* CSS styles for the page */
+    body {
+      background-color: #22212C;
+      color: #FFFFFF;
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+      margin: 0;
+      padding: 0;
+    }
+    #image-container {
+      margin: 10px;
+    }
+  </style>
+</head>
+<body>
+  <form action="/upload" method="post" enctype="multipart/form-data">
+    <input type="file" name="file">
+    <button type="submit">Upload</button>
+  </form>
+  <div id="image-container">
+    <!-- The path overlay image will be inserted here -->
+  </div>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    // When the user uploads a file, submit the form and display the path overlay image
+    $('form').on('submit', function(event) {
+      event.preventDefault();  // prevent the form from being submitted normally
+      $.ajax({
+        url: '/infer',
+        type: 'POST',
+        data: new FormData($('form')[0]),
+        processData: false,
+        contentType: false,
+        success: function(data) {
+          $('#image-container').html('<img src="/static/results/path_overlay.jpg">');
+        },
+        error: function() {
+          alert('An error occurred while processing the image.');
+        }
+      });
+    });
+  </script>
+</body>
+</html>

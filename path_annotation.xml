@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<annotation>
+    <filename>example_image.jpg</filename>
+    <size>
+        <width>800</width>
+        <height>600</height>
+    </size>
+    <object>
+        <name>path_1</name>
+        <polygon>
+            <point x="100" y="200"/>
+            <point x="150" y="250"/>
+            <point x="200" y="275"/>
+            <point x="250" y="300"/>
+        </polygon>
+    </object>
+    <object>
+        <name>path_2</name>
+        <polygon>
+            <point x="300" y="400"/>
+            <point x="350" y="450"/>
+            <point x="400" y="475"/>
+            <point x="450" y="500"/>
+        </polygon>
+    </object>
+</annotation>

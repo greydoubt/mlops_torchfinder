@@ -10,8 +10,7 @@ class Model:
         inputs = tf.keras.layers.Input(shape=self.input_shape)
 
         # Add model layers here
-
-        outputs = tf.keras.layers.Dense(units=self.num_classes, activation="softmax")(x)
+        outputs = self.PathFindingCNN(inputs)
 
         self.model = tf.keras.Model(inputs=inputs, outputs=outputs)
 
@@ -30,4 +29,15 @@ class Model:
     def predict(self, x):
         return self.model.predict(x)
 
-
+    def PathFindingCNN(self, inputs):
+        # Add CNN layers here
+        x = tf.keras.layers.Conv2D(32, kernel_size=(3, 3), activation="relu")(inputs)
+        x = tf.keras.layers.Conv2D(64, kernel_size=(3, 3), activation="relu")(x)
+        x = tf.keras.layers.MaxPooling2D(pool_size=(2, 2))(x)
+        x = tf.keras.layers.Dropout(0.25)(x)
+        x = tf.keras.layers.Flatten()(x)
+        x = tf.keras.layers.Dense(128, activation="relu")(x)
+        x = tf.keras.layers.Dropout(0.5)(x)
+        outputs = tf.keras.layers.Dense(units=self.num_classes, activation="softmax")(x)
+        
+        return outputs
