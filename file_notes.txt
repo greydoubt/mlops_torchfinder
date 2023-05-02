@@ -1,0 +1,73 @@
+
+project/
+    main.py
+    server.py
+    preprocessing/
+        __init__.py
+        image.py
+        transform.py
+        utils.py
+    graph/
+        __init__.py
+        node.py
+        edge.py
+        builder.py
+    detection/
+        __init__.py
+        building.py
+        street.py
+        utils.py
+    pathfinding/
+        __init__.py
+        algorithm.py
+        dijkstra.py
+        astar.py
+    deep_learning/
+        __init__.py
+        data_loader.py
+        model.py
+        train.py
+    utils/
+        __init__.py
+        io.py
+        visualization.py
+
+
+
+
+
+
+    preprocessing/
+        __init__.py: An empty file that signals to Python that this directory should be treated as a package.
+        image.py: Contains functions for loading and saving images, and applying basic transformations like resizing and cropping.
+        transform.py: Contains functions for more complex image transformations, like color normalization and histogram equalization.
+        utils.py: Contains utility functions for image processing, like computing gradients and edge maps.
+
+    graph/
+        __init__.py: An empty file that signals to Python that this directory should be treated as a package.
+        node.py: Defines the Node class, which represents a node in the graph.
+        edge.py: Defines the Edge class, which represents an edge in the graph.
+        builder.py: Contains functions for constructing a graph from an image, like identifying nodes and edges.
+
+    detection/
+        __init__.py: An empty file that signals to Python that this directory should be treated as a package.
+        building.py: Contains functions for detecting buildings in an image.
+        street.py: Contains functions for detecting streets in an image.
+        utils.py: Contains utility functions for object detection, like non-maximum suppression and bounding box visualization.
+
+    pathfinding/
+        __init__.py: An empty file that signals to Python that this directory should be treated as a package.
+        algorithm.py: Defines the PathfindingAlgorithm abstract base class, which specifies the interface for all pathfinding algorithms.
+        dijkstra.py: Defines the DijkstraAlgorithm class, which implements Dijkstra's algorithm for finding the shortest path.
+        astar.py: Defines the AStarAlgorithm class, which implements the A* search algorithm for finding the shortest path.
+
+    deep_learning/
+        __init__.py: An empty file that signals to Python that this directory should be treated as a package.
+        data.py: Contains functions for loading and preprocessing data for deep learning, like creating training and validation sets and applying data augmentation.
+        model.py: Defines the deep learning model architecture.
+        train.py: Contains functions for training and evaluating the deep learning model.
+
+    utils/
+        __init__.py: An empty file that signals to Python that this directory should be treated as a package.
+        io.py: Contains functions for loading and saving data to disk, like images and models.
+        visualization.py: Contains functions for visualizing the graph and the predicted path on an image.
